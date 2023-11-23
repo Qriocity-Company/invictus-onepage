@@ -94,8 +94,8 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", delay: 1.5, duration: 0.2 }}
         >
-          We're currently working hard on this page. Subscribe our newsletter to
-          get an update when it'll be live.
+          We&apos;re currently working hard on this page. Subscribe our newsletter to
+          get an update when it&apos;ll be live.
         </motion.p>
         <motion.span
           className="font-Poppins text-[18px] md:text-[38px] text-[#232323] font-semibold"
