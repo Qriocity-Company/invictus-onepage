@@ -1,7 +1,5 @@
 "use server"
-import React from "react";
 import { Resend } from "resend";
-import ContactFormEmail from "@/email/contact-form-email";
 
 const resend = new Resend("re_ZhujN9je_83ZB2QKqFwnBBJsaE4v2nDwq")
 export async function sendEmail(formData: FormData) {
@@ -28,7 +26,7 @@ export async function sendEmail(formData: FormData) {
             to: "ashutoshuniyal012@gmail.com",
             subject: "New message from Invictus",
             reply_to: senderEmail,
-            react: React.createElement(ContactFormEmail, { message: message, senderEmail: senderEmail }),
+            html:'<p>someone send a mail on invictus :</p> <p>The senders email is: {senderEmail}</p>',
         })
     } catch (e: unknown) {
         console.error(e)
