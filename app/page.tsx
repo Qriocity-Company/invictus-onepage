@@ -14,69 +14,25 @@ import { toast } from "react-hot-toast/headless";
 export default function Home() {
   async function onSubmit(event: any) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget)
-    console.log(formData.get('senderEmail'))
+    const formData = new FormData(event.currentTarget);
+    console.log(formData.get("senderEmail"));
     const { data, error } = await sendEmail(formData);
     if (error) {
       toast.error(error);
       return;
     }
-    toast.success("Thanks you, you will be notified for any future updates")
+    toast.success("Thanks you, you will be notified for any future updates");
   }
 
   return (
     <section className="relative w-screen h-screen flex justify-center items-center flex-col ">
-      {/* <motion.div
-        className=" absolute top-[300px] left-[80px] -z-40"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.4, delay: 2 }}
-      >
-        <Image src={icon1} alt="logo" width={150} height={150} />
-      </motion.div>
-
-      <motion.div
-        className=" absolute top-[150px] left-[200px] -z-40"
-        initial={{ y: 80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.4, delay: 2.4 }}
-      >
-        <Image src={icon1} alt="logo" width={150} height={150} />
-      </motion.div>
-      <motion.div
-        className=" absolute top-[150px] right-[200px] -z-40"
-        initial={{ y: -70, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.4, delay: 2.8 }}
-      >
-        <Image src={icon1} alt="logo" width={150} height={150} />
-      </motion.div>
-      <motion.div
-        className=" absolute top-[50px] right-[300px] -z-40"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.4, delay: 2.4 }}
-      >
-        <Image src={icon1} alt="logo" width={150} height={150} />
-      </motion.div>
-      <motion.div
-        className=" absolute top-[300px] right-[250px] -z-40"
-        initial={{ y: 80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.4, delay: 2 }}
-      >
-        <Image src={icon1} alt="logo" width={150} height={150} />
-      </motion.div> */}
-
-
-
       <div className="flex justify-center items-center flex-col gap-5 mx-[15%] z-10 mt-28 md:mt-80 lg:mt-40">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", duration: 0.5 }}
         >
-          <Image src={logo} alt="logo" width={150}   className=""/>
+          <Image src={logo} alt="logo" width={150} className="" />
         </motion.div>
         <motion.h1
           className=" text-center flex justify-center items-center font-Poppins text-transparent bg-clip-text bg-gradient-to-r from-[#1f7055] font-semibold to-[#0be09a] text-[32px] md:text-[55px] leading-7 md:leading-[56px] pb-4"
@@ -94,8 +50,8 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", delay: 1.5, duration: 0.2 }}
         >
-          We&apos;re currently working hard on this page. Subscribe our newsletter to
-          get an update when it&apos;ll be live.
+          We&apos;re currently working hard on this page. Subscribe our
+          newsletter to get an update when it&apos;ll be live.
         </motion.p>
         <motion.span
           className="font-Poppins text-[18px] md:text-[38px] text-[#232323] font-semibold"
@@ -117,13 +73,17 @@ export default function Home() {
         </motion.h1>
       </div>
       <footer className="bg-white w-full flex flex-col gap-5 lg:-mt-20 md:-mt-16 -mt-8 justify-center items-center p-20  h-screen ">
-        <div className="w-[350px] border rounded-md">
+        <motion.div className="mail-div w-[350px] border rounded-md "
+         initial={{ x: -200, opacity: 0 }}
+         animate={{ x: 0, opacity: 1 }}
+         transition={{ type: "spring", delay: 2.5, duration: 0.5 }}
+         >
           <form className="flex gap-3  p-3" onSubmit={onSubmit}>
             <input
               type="email"
               name="senderEmail"
               placeholder="Your email address "
-              className="text-[12px] flex-[7]"
+              className="text-[12px] flex-[7] "
               style={{ outline: "none" }}
             />
             <div className=" text-[#828282]">|</div>
@@ -134,12 +94,42 @@ export default function Home() {
               NOTIFY ME
             </button>
           </form>
-        </div>
+        </motion.div>
         <div className="flex gap-5 ">
-          <FaFacebookF className="hover:text-green-600 cursor-pointer" />
-          <FaXTwitter className="hover:text-green-600 cursor-pointer" />
-          <FaInstagram className="hover:text-green-600 cursor-pointer" />
-          <FaLinkedinIn className="hover:text-green-600 cursor-pointer" />
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", delay: 1.8, duration: 0.5 }}
+          >
+            {" "}
+            <FaFacebookF className="hover:text-green-600 cursor-pointer" />
+          </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", delay: 1.9, duration: 0.5 }}
+          >
+            <FaXTwitter className="hover:text-green-600 cursor-pointer" />
+          </motion.div>
+          <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", delay: 2, duration: 0.5 }}
+          >
+          <a href="https://www.instagram.com/invictusglobaltech/">
+            {" "}
+            <FaInstagram className="hover:text-green-600 cursor-pointer" />
+          </a>
+          </motion.div>
+          <motion.div
+           initial={{ y: 50, opacity: 0 }}
+           animate={{ y: 0, opacity: 1 }}
+           transition={{ type: "spring", delay: 2.1, duration: 0.5 }}
+          >
+          <a href="https://www.linkedin.com/company/invictus-global-tech/mycompany/?viewAsMember=true">
+            <FaLinkedinIn className="hover:text-green-600 cursor-pointer" />
+          </a>
+          </motion.div>
         </div>
       </footer>
     </section>
