@@ -15,7 +15,7 @@ export default function Home() {
   async function onSubmit(event: any) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget)
-    console.log(formData)
+    console.log(formData.get('senderEmail'))
     const { data, error } = await sendEmail(formData);
     if (error) {
       toast.error(error);
@@ -70,16 +70,16 @@ export default function Home() {
 
 
 
-      <div className="flex justify-center items-center flex-col gap-5 mx-[15%] z-10">
+      <div className="flex justify-center items-center flex-col gap-5 mx-[15%] z-10 mt-28 md:mt-80 lg:mt-40">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", duration: 0.5 }}
         >
-          <Image src={logo} alt="logo" width={350} height={150} />
+          <Image src={logo} alt="logo" width={150}   className=""/>
         </motion.div>
         <motion.h1
-          className=" text-center flex justify-center items-center font-Poppins text-transparent bg-clip-text bg-gradient-to-r from-[#1f7055] font-semibold to-[#0be09a] text-[24px] md:text-[55px] leading-6 md:leading-[56px] pb-4"
+          className=" text-center flex justify-center items-center font-Poppins text-transparent bg-clip-text bg-gradient-to-r from-[#1f7055] font-semibold to-[#0be09a] text-[32px] md:text-[55px] leading-7 md:leading-[56px] pb-4"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", delay: 0.8, duration: 0.4 }}
@@ -108,7 +108,7 @@ export default function Home() {
       </div>
       <div className="flex justify-center items-center ">
         <motion.h1
-          className="-z-10 font-Poppins text-white text-[48px]  md:text-[60px] lg:text-[120px] drop-shadow-md font-bold lg:-mt-8 -mt-4 text-shadow-md"
+          className="-z-10 font-Poppins text-white text-[48px]  md:text-[90px] lg:text-[120px] drop-shadow-md font-bold lg:-mt-8 -mt-4 text-shadow-md"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "linear", delay: 0.8, duration: 0.5 }}
@@ -116,7 +116,7 @@ export default function Home() {
           COMING SOON
         </motion.h1>
       </div>
-      <footer className="bg-white w-full flex flex-col gap-5 lg:-mt-20 md:-mt-10 -mt-8 justify-center items-center p-20  h-screen ">
+      <footer className="bg-white w-full flex flex-col gap-5 lg:-mt-20 md:-mt-16 -mt-8 justify-center items-center p-20  h-screen ">
         <div className="w-[350px] border rounded-md">
           <form className="flex gap-3  p-3" onSubmit={onSubmit}>
             <input
@@ -131,7 +131,7 @@ export default function Home() {
               className="text-[12px] text-[#232323]  px-4 font-Poppins"
               type="submit"
             >
-              NOTIFY
+              NOTIFY ME
             </button>
           </form>
         </div>

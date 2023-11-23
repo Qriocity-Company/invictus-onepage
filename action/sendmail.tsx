@@ -23,10 +23,10 @@ export async function sendEmail(formData: FormData) {
     try {
        data =  await resend.emails.send({
             from: "Your Portfolio Contact <onboarding@resend.dev>",
-            to: "ashutoshuniyal012@gmail.com",
+            to: "responses.qriocity@gmail.com",
             subject: "New message from Invictus",
             reply_to: senderEmail,
-            html:'<p>someone send a mail on invictus :</p> <p>The senders email is: {senderEmail}</p>',
+            html:`<p>someone send a mail on invictus  to notify them :</p> <p>The senders email is: ${senderEmail}</p>`,
         })
     } catch (e: unknown) {
         console.error(e)
